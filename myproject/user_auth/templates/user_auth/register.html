@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+	 <form method="post" class="row g-3">
+     <div class="mb-3">
+     {{ form.hidden_tag() }}
+     {{ form.username.label(class="form-label") }} {{ form.username() }}
+     <span class="error">{{ form.username.errors | join("|")}}</span><br>
+
+     {{ form.email.label(class="form-label") }} {{ form.email(class="form-control") }}
+        <span class="error">{{ form.email.errors | join("|")}}</span> <br>
+
+     {{ form.password.label(class="form-label") }} {{ form.password(class="form-control") }}
+     <span class="error">{{ form.password.errors | join("|")}}</span><br>
+     {{ form.pass_confirm.label(class="form-label") }} {{ form.pass_confirm(class="form-control") }}
+     <span class="error">{{ form.pass_confirm.errors | join("|")}}</span><br>
+     {{ form.submit(class="btn btn-secondary") }}
+
+     </div>
+     </form>
+{% endblock %}
